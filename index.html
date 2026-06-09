@@ -41,8 +41,8 @@ async function load(){
 let weekProfit = 0;
 
   document.getElementById("list").innerHTML = data.map(p=>{
-    weekProfit += profit;
     let profit = Number(p.Balance || 0) - 1000;
+weekProfit += profit;
     return `<div class="row">
       <div>${p.name}</div>
       <div class="green">$${p.Balance}</div>
