@@ -16,7 +16,8 @@
 
   <div class="grid">
     <div class="box">TỔNG NGƯỜI CHƠI<br><h1 id="count">0</h1></div>
-    <div class="box">TỔNG SỐ TIỀN<br><h1 id="total" class="green">$0</h1></div>
+<div class="box">TỔNG SỐ TIỀN<br><h1 id="total" class="green">$0</h1></div>
+<div class="box">LỜI/LỖ TUẦN NÀY<br><h1 id="weekProfit" class="green">$0</h1></div>
   </div>
 
   <div class="box">
@@ -37,9 +38,10 @@ async function load(){
 
   document.getElementById("count").innerText = data.length;
   let total = 0;
+let weekProfit = 0;
 
   document.getElementById("list").innerHTML = data.map(p=>{
-    total += Number(p.Balance || 0);
+    weekProfit += Number(p.Profit || 0);
     let profit = Number(p.Profit || 0);
     return `<div class="row">
       <div>${p.name}</div>
@@ -48,7 +50,7 @@ async function load(){
     </div>`;
   }).join("");
 
-  document.getElementById("total").innerText = "$" + total;
+  document.getElementById("weekProfit").innerText = "$" + weekProfit;
 }
 load();
 </script>
