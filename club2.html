@@ -33,7 +33,8 @@ const SUPABASE_KEY = "sb_publishable_0IM2B8r4kzZDc5SdjhgN5Q_EA9FOIgh";
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 async function load(){
-  const { data, error } = await db.from("Players").select("*").order("id");
+  const { data, error } = await db.from("Players
+    Other").select("*").order("id");
   if(error){ document.body.innerHTML += error.message; return; }
 
   document.getElementById("count").innerText = data.length;
