@@ -15,13 +15,11 @@
   <div class="logo">WYNN / SẢNH CHÍNH</div>
 
   <div class="grid">
-   <div class="box" style="margin-bottom:15px;text-align:center;">
-  <div style="font-size:18px;letter-spacing:3px;">AVAILABLE BALANCE</div>
-  <h1 id="available" class="green" style="font-size:60px;">$37,000</h1>
-  </div>
-<div class="box">TỔNG NGƯỜI CHƠI<br><h1 id="count">0</h1></div>
+    <div class="box">TỔNG NGƯỜI CHƠI<br><h1 id="count">0</h1></div>
 <div class="box">TỔNG SỐ TIỀN<br><h1 id="total" class="green">$0</h1></div>
 <div class="box">LỜI/LỖ TUẦN NÀY<br><h1 id="weekProfit" class="green">$0</h1></div>
+  </div>
+
   <div class="box">
     <div class="row"><b>TÊN</b><b>SỐ DƯ</b><b>LỜI/LỖ</b></div>
     <div id="list"></div>
@@ -35,7 +33,7 @@ const SUPABASE_KEY = "sb_publishable_0IM2B8r4kzZDc5SdjhgN5Q_EA9FOIgh";
 const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 async function load(){
-  const { data, error } = await db.from("Player Other").select("*").order("id");
+  const { data, error } = await db.from("Players").select("*").order("id");
   if(error){ document.body.innerHTML += error.message; return; }
 
   document.getElementById("count").innerText = data.length;
