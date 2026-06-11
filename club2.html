@@ -57,9 +57,10 @@ weekProfit += profit;
 document.getElementById("weekProfit").innerText =
 "$" + weekProfit;
 
-document.getElementById("total").innerText =
-"$" + (startTotal + weekProfit);
+let startTotal = data.length * 1000;
 
+document.getElementById("total").innerText =
+"$" + (startTotal - weekProfit);
 }
 load();
 
