@@ -43,6 +43,7 @@ async function load(){
   document.getElementById("count").innerText = data.length;
   let total = 0;
 let weekProfit = 0;
+let startTotal = data.length * 1000;
 
   document.getElementById("list").innerHTML = data.map(p=>{
     let profit = Number(p.Balance || 0) - 1000;
@@ -53,10 +54,15 @@ weekProfit += profit;
       <div class="${profit>=0?'green':'red'}">$${profit}</div>
     </div>`;
   }).join("");
+document.getElementById("weekProfit").innerText =
+"$" + weekProfit;
 
-  document.getElementById("weekProfit").innerText = "$" + weekProfit;
+document.getElementById("total").innerText =
+"$" + (startTotal + weekProfit);
+
 }
 load();
+
 </script>
 </body>
 </html>
