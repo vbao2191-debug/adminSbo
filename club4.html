@@ -49,7 +49,7 @@ let startTotal = data.length * 1000;
     let profit = Number(p.Balance || 0) - 1000;
 weekProfit += profit;
     return `<div class="row">
-      <div>${p.name}</div>
+      <div>${p.Name}</div>
       <div class="green">$${p.Balance}</div>
       <div class="${profit>=0?'green':'red'}">$${profit}</div>
     </div>`;
