@@ -46,7 +46,7 @@ let weekProfit = 0;
 let startTotal = data.length * 2000;
 
   document.getElementById("list").innerHTML = data.map(p=>{
-    let profit = Number(p.Balance || 0) - 2000;
+    let profit = Number(p.Balance || 0) - 1000;
 weekProfit += profit;
     return `<div class="row">
       <div>${p.Name}</div>
