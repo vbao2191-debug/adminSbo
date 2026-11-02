@@ -43,7 +43,7 @@ async function load(){
   document.getElementById("count").innerText = data.length;
   let total = 0;
 let weekProfit = 0;
-letlet startTotal = data.length * 1000 + 1000;
+let startTotal = data.length * 1000;
 
   document.getElementById("list").innerHTML = data.map(p=>{
     let profit = Number(p.Balance || 0) - 1000;
